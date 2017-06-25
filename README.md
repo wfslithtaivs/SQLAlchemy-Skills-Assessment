@@ -9,12 +9,12 @@
   <li>Navigate relationships between tables</li>
 </ol>
 
-Basic setup: 
-$ virtualenv env
-$ source env/bin/activate
-$ pip install -r requirements.txt
+<h2>Basic setup: </h2>
+<div>$ virtualenv env</div>
+<div>$ source env/bin/activate</div>
+<div>$ pip install -r requirements.txt</div>
 
-DB setup:
-$ dropdb cars
-$ createdb cars
-$ psql cars < database.sql
+<h2>DB setup:</h2>
+<div>$ dropdb cars</div>
+<div>$ createdb cars</div>
+<div>$ psql cars < database.sql</div>
