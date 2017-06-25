@@ -17,7 +17,15 @@ class Brand(db.Model):
 
     __tablename__ = "brands"
 
-    pass
+    brand_id =  db.Column(db.String(5), primary_key=True)
+    name = db.Column(db.String(50), nullable=False, unique=True)
+    founded = db.Column(db.Integer)
+    headquarters = db.Column(db.String(50))
+    discontinues = db.Column(db.Integer)
+
+    def __repr__(self):
+        return "<Brand brand_id=%s name=%s founded=%s headquarters=%s discontinues=%s>" % (
+            self.brand_id, self.name, self.founded, self.headquarters, self.discontinues)
 
 
 class Model(db.Model):
@@ -25,7 +33,31 @@ class Model(db.Model):
 
     __tablename__ = "models"
 
-    pass
+    model_id = db.Column(Integer, primary_key=True, autoincrement=True)
+    year = db.Column(db.Integer)
+    brand_id = db.Column(db.String(5), db.ForeignKey('brands.brand_id'))
+    name = db.Column(db.String(50))
+
+    awards = db.relationship('Award')
+
+    def __repr__(self):
+        return "<Model model_id=%s year=%s brand_id=%s name=%s>" % (
+            self.model_id, self.year, self.brand_id, self.name)
+
+
+class Award(db.Model):
+    """Award model."""
+
+    __tablename__ = "awards"
+
+    award_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    year = db.Column(db.Integer)
+    winner_id = db.Column(db.Integer, db.ForeignKey('models.model_id'))
+    name = db.Column(db.String(50))
+
+    def __repr__(self):
+        return "<Award award_id=%s year=%s winner_id=%s name=%s>" % (
+            self.award_id, self.year, self.winner_id, self.name)
 
 # End Part 1
 
