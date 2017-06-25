@@ -23,13 +23,20 @@ init_app()
 # 1. What is the datatype of the returned value of
 # ``Brand.query.filter_by(name='Ford')``?
 
+# type(Brand.query.filter_by(name='Ford'))
+# flask_sqlalchemy.BaseQuery
+# to fetch result need to call methods - first(), one(), all(), etc. 
 
 
 # 2. In your own words, what is an association table, and what type of
 # relationship (many to one, many to many, one to one, etc.) does an
 # association table manage?
 
-
+# Association table links together tables with many-to-many relations 
+# and doesn't add any additional information. 
+# Ex: Kids-Toys - every kid can play with many toys, any toy might be played by many kids. 
+# Association table helps to return: Set of toys a kid has played with, 
+# set of kids the toy has been played by. 
 
 
 # -------------------------------------------------------------------
