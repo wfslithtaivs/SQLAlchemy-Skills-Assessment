@@ -40,13 +40,13 @@ class Model(db.Model):
     brand_id = db.Column(db.String(5), db.ForeignKey('brands.brand_id'))
     name = db.Column(db.String(50))
 
-    awards = db.relationship('Award')
+    awards = db.relationship('Award') # unnecessary for assessment, added to be along with database schema
 
     def __repr__(self):
         return "<Model model_id=%s year=%s brand_id=%s name=%s>" % (
             self.model_id, self.year, self.brand_id, self.name)
 
-
+# unnecessary for assessment, added to be along with database schema
 class Award(db.Model):
     """Award model."""
 
