@@ -33,7 +33,7 @@ class Model(db.Model):
 
     __tablename__ = "models"
 
-    model_id = db.Column(Integer, primary_key=True, autoincrement=True)
+    model_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     year = db.Column(db.Integer)
     brand_id = db.Column(db.String(5), db.ForeignKey('brands.brand_id'))
     name = db.Column(db.String(50))
