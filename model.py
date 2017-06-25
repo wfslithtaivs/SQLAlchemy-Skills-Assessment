@@ -21,11 +21,11 @@ class Brand(db.Model):
     name = db.Column(db.String(50), nullable=False, unique=True)
     founded = db.Column(db.Integer)
     headquarters = db.Column(db.String(50))
-    discontinues = db.Column(db.Integer)
+    discontinued = db.Column(db.Integer)
 
     def __repr__(self):
-        return "<Brand brand_id=%s name=%s founded=%s headquarters=%s discontinues=%s>" % (
-            self.brand_id, self.name, self.founded, self.headquarters, self.discontinues)
+        return "<Brand brand_id=%s name=%s founded=%s headquarters=%s discontinued=%s>" % (
+            self.brand_id, self.name, self.founded, self.headquarters, self.discontinued)
 
 
 class Model(db.Model):
